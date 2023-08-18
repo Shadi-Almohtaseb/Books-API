@@ -6,7 +6,6 @@ import { loggerMiddleware } from "./middleware/logger.js";
 dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 5000;
-const HOST = '0.0.0.0'; 
 app.use(express.json())
 
 app.use(loggerMiddleware)
@@ -21,6 +20,6 @@ app.use((req, res) => {
     res.status(404).send("You requested something does not exist :(");
 })
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     console.log(`Server working on port ${PORT} and host: http://localhost:${PORT}`);
 })
