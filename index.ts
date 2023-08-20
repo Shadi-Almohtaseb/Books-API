@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
     res.send("Hello world")
 })
 
+app.get("/health", (req, res) => {
+    res.status(200).send("OK")
+})
+
 app.use("/books", bookRouter)
 
 app.use((req, res) => {
